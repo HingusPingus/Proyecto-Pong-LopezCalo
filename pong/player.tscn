@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bx8j7svrtatrd"]
+
+[ext_resource type="Texture2D" uid="uid://c6na6mjf852ox" path="res://retangulo.png" id="1_4flbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(24, 133)
+
+[node name="P1" type="CharacterBody2D" unique_id=1847859293]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=847714994]
+scale = Vector2(0.10888889, 0.5888889)
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=761977624]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_onrkg")

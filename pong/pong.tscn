@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cumb58pfew47m"]
+
+[ext_resource type="PackedScene" uid="uid://bx8j7svrtatrd" path="res://player.tscn" id="1_pkvn5"]
+[ext_resource type="Script" uid="uid://bv8waeum5xdab" path="res://player.gd" id="2_m5tya"]
+[ext_resource type="PackedScene" uid="uid://dg31b8k137gw7" path="res://bola.tscn" id="3_eipaa"]
+[ext_resource type="PackedScene" uid="uid://bkrhgvr2yp8f" path="res://area.tscn" id="4_m5tya"]
+
+[node name="Pong" type="Node2D" unique_id=1611769901]
+
+[node name="P1" parent="." unique_id=1847859293 instance=ExtResource("1_pkvn5")]
+position = Vector2(71, 287)
+script = ExtResource("2_m5tya")
+
+[node name="bola" parent="." unique_id=1300747228 instance=ExtResource("3_eipaa")]
+position = Vector2(584, 280)
+
+[node name="P2" parent="." unique_id=549783109 instance=ExtResource("1_pkvn5")]
+position = Vector2(1082, 293)
+script = ExtResource("2_m5tya")
+
+[node name="Area2D" parent="." unique_id=1490613822 instance=ExtResource("4_m5tya")]
