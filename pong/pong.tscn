@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://cumb58pfew47m"]
 
+[ext_resource type="Script" uid="uid://dose7bma6je0g" path="res://puntaje.gd" id="1_a6iag"]
 [ext_resource type="PackedScene" uid="uid://bx8j7svrtatrd" path="res://player.tscn" id="1_pkvn5"]
-[ext_resource type="Script" uid="uid://bv8waeum5xdab" path="res://player.gd" id="2_m5tya"]
+[ext_resource type="Script" uid="uid://b02awrypnj3xk" path="res://player.gd" id="2_m5tya"]
 [ext_resource type="PackedScene" uid="uid://dg31b8k137gw7" path="res://bola.tscn" id="3_eipaa"]
-[ext_resource type="PackedScene" uid="uid://bkrhgvr2yp8f" path="res://area.tscn" id="4_m5tya"]
+[ext_resource type="Script" uid="uid://bx0sca1up55tv" path="res://bola.gd" id="4_ludyb"]
+[ext_resource type="PackedScene" uid="uid://dsdaau5ky8hln" path="res://paredes.tscn" id="4_m5tya"]
+[ext_resource type="Script" uid="uid://8tgktdrg62rr" path="res://paredes.gd" id="6_a6iag"]
+[ext_resource type="PackedScene" uid="uid://b81qycj5upkbb" path="res://arcos.tscn" id="6_trlu6"]
+[ext_resource type="Script" uid="uid://b8j8sjlqijrlr" path="res://arcos.gd" id="8_7860c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ludyb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_trlu6"]
 
 [node name="Pong" type="Node2D" unique_id=1611769901]
+script = ExtResource("1_a6iag")
 
 [node name="P1" parent="." unique_id=1847859293 instance=ExtResource("1_pkvn5")]
 position = Vector2(71, 287)
@@ -13,9 +23,30 @@ script = ExtResource("2_m5tya")
 
 [node name="bola" parent="." unique_id=1300747228 instance=ExtResource("3_eipaa")]
 position = Vector2(584, 280)
+script = ExtResource("4_ludyb")
 
 [node name="P2" parent="." unique_id=549783109 instance=ExtResource("1_pkvn5")]
 position = Vector2(1082, 293)
 script = ExtResource("2_m5tya")
 
-[node name="Area2D" parent="." unique_id=1490613822 instance=ExtResource("4_m5tya")]
+[node name="paredes arriba y abajo" parent="." unique_id=256274846 instance=ExtResource("4_m5tya")]
+script = ExtResource("6_a6iag")
+
+[node name="Label" type="Label" parent="." unique_id=405772515]
+offset_left = 652.0
+offset_top = 203.0
+offset_right = 692.0
+offset_bottom = 226.0
+text = "0"
+label_settings = SubResource("LabelSettings_ludyb")
+
+[node name="Label2" type="Label" parent="." unique_id=1803489275]
+offset_left = 477.0
+offset_top = 203.0
+offset_right = 517.0
+offset_bottom = 226.0
+text = "0"
+label_settings = SubResource("LabelSettings_trlu6")
+
+[node name="arcos" parent="." unique_id=910084502 instance=ExtResource("6_trlu6")]
+script = ExtResource("8_7860c")
