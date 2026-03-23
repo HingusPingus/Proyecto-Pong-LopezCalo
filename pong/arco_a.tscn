@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://4tcx4tuyv56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpmu2"]
+size = Vector2(20, 663)
+
+[node name="arcoA" type="StaticBody2D" unique_id=839256977]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=2116882388]
+position = Vector2(-10, 321.5)
+shape = SubResource("RectangleShape2D_xpmu2")

@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dose7bma6je0g" path="res://puntaje.gd" id="1_a6iag"]
 [ext_resource type="PackedScene" uid="uid://bx8j7svrtatrd" path="res://player.tscn" id="1_pkvn5"]
-[ext_resource type="Script" uid="uid://b02awrypnj3xk" path="res://playerA.gd" id="2_m5tya"]
+[ext_resource type="Script" uid="uid://bxxkdvedv72xt" path="res://player.gd" id="2_m5tya"]
 [ext_resource type="PackedScene" uid="uid://dg31b8k137gw7" path="res://bola.tscn" id="3_eipaa"]
 [ext_resource type="Script" uid="uid://bx0sca1up55tv" path="res://bola.gd" id="4_ludyb"]
 [ext_resource type="PackedScene" uid="uid://dsdaau5ky8hln" path="res://paredes.tscn" id="4_m5tya"]
 [ext_resource type="Script" uid="uid://8tgktdrg62rr" path="res://paredes.gd" id="6_a6iag"]
-[ext_resource type="Script" uid="uid://l1euqiyxr652" path="res://playerB.gd" id="6_i1h74"]
 [ext_resource type="PackedScene" uid="uid://c7nhvws6u3lv3" path="res://arco_b.tscn" id="8_bb6i3"]
 [ext_resource type="Script" uid="uid://b521p5r0e2id0" path="res://arcoB.gd" id="9_i1h74"]
 [ext_resource type="PackedScene" uid="uid://4tcx4tuyv56" path="res://arco_a.tscn" id="10_f1tab"]
@@ -30,7 +29,7 @@ script = ExtResource("4_ludyb")
 
 [node name="P2" parent="." unique_id=549783109 instance=ExtResource("1_pkvn5")]
 position = Vector2(1082, 293)
-script = ExtResource("6_i1h74")
+script = ExtResource("2_m5tya")
 
 [node name="paredes arriba y abajo" parent="." unique_id=256274846 instance=ExtResource("4_m5tya")]
 script = ExtResource("6_a6iag")

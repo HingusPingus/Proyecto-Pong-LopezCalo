@@ -1,19 +1,15 @@
 extends CharacterBody2D
 
-var speed=300
+var speed=Global.ballSpeed
 var direction=Vector2(0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var randomx =randf()
 	var randomy =randf()
-	if (randomx<0.5):
-		direction.x +=randomx
+	if Global.lastPoint=="a":
+		direction.x +=1
 	else:
-		direction.x -=randomx
-	if (randomy<0.5):
-		direction.y +=randomy
-	else:
-		direction.y -=randomy
+		direction.x -=1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,13 +22,15 @@ func _physics_process(delta: float) -> void:
 		if collider is pared:
 			direction.y -=direction.y*2
 		if collider is arcoA:
-			Global.pointsA+=1
+			Global.pointsB+=1
+			Global.lastPoint="b"
 			get_tree().reload_current_scene()
 		if collider is arcoB:
-			Global.pointsB+=1
+			Global.pointsA+=1
+			Global.lastPoint="a"
 			get_tree().reload_current_scene()
-		if collider is arcos:
-			get_tree().reload_current_scene()
-		if collider is player:
+		if collider is playerA || collider is playerB:
 			direction.x-=direction.x*2
+			direction.y = randf()*2.0 - 1
+
 	
