@@ -6,3 +6,4 @@ const initialBallSpeed=500
 var ballSpeed=initialBallSpeed
 var playerSpeed=300
 var lastPoint="a"
+var pointsToWin=1

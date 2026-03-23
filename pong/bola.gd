@@ -4,8 +4,7 @@ var speed=Global.ballSpeed
 var direction=Vector2(0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var randomx =randf()
-	var randomy =randf()
+	
 	if Global.lastPoint=="a":
 		direction.x +=1
 	else:
@@ -24,11 +23,21 @@ func _physics_process(delta: float) -> void:
 		if collider is arcoA:
 			Global.pointsB+=1
 			Global.lastPoint="b"
-			get_tree().reload_current_scene()
+			if Global.pointsToWin==Global.pointsB:
+				Global.pointsA=0
+				Global.pointsB=0
+				get_tree().change_scene_to_file("res://menu.tscn")
+			else:
+				get_tree().reload_current_scene()		
 		if collider is arcoB:
 			Global.pointsA+=1
 			Global.lastPoint="a"
-			get_tree().reload_current_scene()
+			if Global.pointsToWin==Global.pointsA:
+				Global.pointsA=0
+				Global.pointsB=0
+				get_tree().change_scene_to_file("res://menu.tscn")
+			else:
+				get_tree().reload_current_scene()
 		if collider is playerA || collider is playerB:
 			direction.x-=direction.x*2
 			direction.y = randf()*2.0 - 1
